@@ -30,7 +30,7 @@ public class Day11 {
                 }
             }
             Character[][] previous = new Character[input.size()][input.get(0).length()];
-            for(int i = 0;true;i++){
+            while(true){
                 for(int j = 0;j< seats.length;j++){
                     for(int k = 0;k< seats[0].length;k++){
                         previous[j][k] = seats[j][k];

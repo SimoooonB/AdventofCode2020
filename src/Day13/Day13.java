@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 public class Day13 {
     private final static String path = "src\\Day13\\input.txt";
-    private static ArrayList<String> input= getInput();
+    private static final ArrayList<String> input= getInput();
 
     public static void main(String[] args){
         teil1();
@@ -29,32 +29,12 @@ public class Day13 {
         }
     }
 
-    private static int getLargestID(String[] busIDs){
-        int largestID = 0;
-        for(String id:busIDs){
-            if(id.equals("x")){continue;}
-            if(Integer.parseInt(id) > largestID){largestID = Integer.parseInt(id);}
-        }
-        return largestID;
-    }
-
     public static void teil2(){
         System.out.println("Part 2:");
         String[] busIDs = input.get(1).split(",");
-        int largestID = getLargestID(busIDs);
-        int largestIDIndex = Integer.MIN_VALUE;
-        for (int i = 0;i< busIDs.length;i++){
-            if(busIDs[i].equals("x")){continue;}
-            if(Integer.parseInt(busIDs[i]) == largestID){
-                largestIDIndex = i;
-            }
-        }
-//        long startID = 100000000000000L;
-//        while((startID+largestIDIndex)%largestID != 0){startID++;}
         long increaseBy = 1;
         int IDsDone = 0;
         for(long i = 1;true;i+=increaseBy){
-            //System.out.println(i);
             int currentID = Integer.parseInt(busIDs[IDsDone]);
             if(((i+IDsDone)%currentID) == 0){
                 System.out.println("ID " + currentID + "done (timestamp:" + i + ")");
@@ -68,23 +48,6 @@ public class Day13 {
                 System.out.println("Done, " + i);
                 return;
             }
-//            if(i%10000000 == 0){
-//                System.out.println(i);
-//            }
-//            boolean timestampValid = true;
-//            for(int j = 0;j<busIDs.length;j++){
-//                if(!busIDs[j].equals("x")){
-//                    int ID = Integer.parseInt(busIDs[j]);
-//                    if((i+j)%ID != 0){
-//                        timestampValid = false;
-//                        break;
-//                    }
-//                }
-//            }
-//            if(timestampValid){
-//                System.out.println(i);
-//                break;
-//            }
         }
     }
 

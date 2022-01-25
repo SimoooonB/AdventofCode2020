@@ -1,11 +1,11 @@
 package Day16;
 
 public class Field {
-    int firstIntervalStart;
-    int firstIntervalEnd;
-    int secondIntervalStart;
-    int secondIntervalEnd;
-    String description;
+    private final int firstIntervalStart;
+    private final int firstIntervalEnd;
+    private final int secondIntervalStart;
+    private final int secondIntervalEnd;
+    private final String description;
 
     public Field(String line){
         description = line.split(":")[0];

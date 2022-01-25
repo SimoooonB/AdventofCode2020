@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 public class DayXX {
     private final static String path = "src\\Day\\input.txt";
-    private final static ArrayList<String> input= getInput();
+    private final static ArrayList<String> input = getInput();
 
     public static void main(String[] args){
         System.out.println("Part 1:");

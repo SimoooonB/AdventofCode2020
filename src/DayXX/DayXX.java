@@ -10,7 +10,10 @@ public class DayXX {
     private final static ArrayList<String> input= getInput();
 
     public static void main(String[] args){
+        System.out.println("Part 1:");
         teil1();
+
+        System.out.println("Part 2:");
         teil2();
     }
 
